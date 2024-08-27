@@ -1,0 +1,71 @@
+.search_wrapper {
+    background: url(./../../Photos/search-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 80px 13% !important;
+    position: relative;
+    color: #fff;
+    z-index: 1; /* Z-index'i çocuk elemanlar üzerinde tutmak için ayarlayın */
+}
+
+.search_wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: -1; /* Pseudo-elementi ana elementin arkasına geçirin */
+}
+
+.Cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    position: relative; /* Z-index'in doğru çalışması için gerekli */
+    z-index: 2; 
+    margin-top: 60px;
+}
+
+.Cards .card {
+    display: flex;
+    gap: 25px;
+}
+
+.Cards .card i {
+    height: 40px; /* Yükseklik değeri 40px olarak güncellendi */
+    width: 40px;  /* Genişlik değeri 40px olarak güncellendi */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 50%; /* Daire oluşturmak için border-radius 50% */
+}
+.Cards .card h3{
+    font-size: 26px;
+ 
+}
+
+.Cards .card h3 span {
+    display: block;
+    font-weight: 300;
+    font-size: 12px;
+    padding-top: 15px;
+    
+}
+
+@media screen and (max-width:1200px) {
+     .Cards{
+        grid-template-columns: repeat(3,1fr);
+     }
+}
+@media screen and (max-width:768px) {
+     .Cards{
+        grid-template-columns: repeat(1,1fr);
+     }
+}
